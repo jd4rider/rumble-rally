@@ -26,6 +26,9 @@ export default class GameScene extends Phaser.Scene {
     this.sim = createSim(Matter, lvl)
     this.acc = 0
     this.ended = false
+    this.leaving = false
+    this.input.enabled = true
+    this.input.keyboard.enabled = true
     this.elapsed = 0
     this.cameras.main.fadeIn(250, 4, 20, 36)
 
@@ -56,6 +59,8 @@ export default class GameScene extends Phaser.Scene {
     this.keys = this.input.keyboard.addKeys({ left: 'LEFT', right: 'RIGHT', a: 'A', d: 'D', r: 'R', esc: 'ESC' })
     this.input.keyboard.addCapture('LEFT,RIGHT,UP,DOWN,SPACE')
     this.input.addPointer(3)
+    this.keys.r.removeAllListeners()
+    this.keys.esc.removeAllListeners()
     this.keys.r.on('down', () => this.restart())
     this.keys.esc.on('down', () => fade(this, 'levels', { page: Math.floor((this.n - 1) / 10) }))
 
