@@ -310,8 +310,9 @@ export default class GameScene extends Phaser.Scene {
     const y = win ? 110 : 60
     const retry = button(this, win ? -190 : -120, y, '↻ Retry', () => this.restart(), { w: 170, h: 60, size: 24, color: 0x0284c7 })
     const menu = button(this, win ? 0 : 120, y, '☰ Levels', () => fade(this, 'levels', { page: Math.floor((this.n - 1) / 10) }), { w: 170, h: 60, size: 24, color: 0x475569 })
-    box.add([retry, menu])
-    if (win && this.n < TOTAL_LEVELS) box.add(button(this, 190, y, 'Next ▶', () => fade(this, 'game', { level: this.n + 1 }), { w: 170, h: 60, size: 24, color: 0xea580c }))
+    const next = win && this.n < TOTAL_LEVELS && button(this, 190, y, 'Next ▶', () => fade(this, 'game', { level: this.n + 1 }), { w: 170, h: 60, size: 24, color: 0xea580c })
+    box.add([retry, menu, ...(next ? [next] : [])])
+    box.list.forEach((c) => c.setScrollFactor?.(0))
     box.setScale(0.7).setAlpha(0)
     this.tweens.add({ targets: box, scale: 1, alpha: 1, duration: 260, ease: 'Back.Out' })
     shade.setAlpha(0)
