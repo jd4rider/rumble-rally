@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rumble Rally — a physics hill-climb driving game</title>
+<meta name="description" content="Drive a little red car over hills, crates and gaps. Play free in your browser or download Rumble Rally for macOS, Windows and Linux." />
+<link rel="icon" href="./icon.png" />
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;color:#f5f3ff;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:radial-gradient(circle at 50% 0%,#38bdf8,#0c4a6e 55%,#082f49)}
+  main{max-width:560px;padding:24px}
+  img{width:128px;height:128px;border-radius:28px;box-shadow:0 12px 40px #0008}
+  h1{font-size:52px;margin:16px 0 8px;background:linear-gradient(90deg,#fde047,#ffffff,#fb923c,#f87171);-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{opacity:.85;line-height:1.5}
+  .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+  a.btn{color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+  a.btn:hover{background:rgba(255,255,255,.18)}
+  a.primary{background:linear-gradient(135deg,#f97316,#dc2626);border:none;font-size:20px;padding:14px 40px}
+  small{opacity:.6}
+</style>
+</head>
+<body>
+<main>
+  <img src="./icon.png" alt="Rumble Rally icon" />
+  <h1>Rumble Rally</h1>
+  <p>Drive a cat-piloted rally car over hills, jumps and crates to reach the flag. Grab the three stars on every course. 200 procedurally generated levels across 5 worlds. Arrow keys on desktop, on-screen arrow buttons on touch screens (landscape is best on a phone).</p>
+  <div class="row"><a class="btn primary" href="./play/">Play in your browser</a></div>
+  <p>Or download the app:</p>
+  <div class="row">
+    <a class="btn" href="https://github.com/jd4rider/rumble-rally/releases/latest/download/Rumble-Rally-mac-arm64.dmg">macOS (Apple Silicon)</a>
+    <a class="btn" href="https://github.com/jd4rider/rumble-rally/releases/latest/download/Rumble-Rally-mac-x64.dmg">macOS (Intel)</a>
+    <a class="btn" href="https://github.com/jd4rider/rumble-rally/releases/latest/download/Rumble-Rally-win-setup.exe">Windows</a>
+    <a class="btn" href="https://github.com/jd4rider/rumble-rally/releases/latest/download/Rumble-Rally-linux-x86_64.AppImage">Linux (AppImage)</a>
+  </div>
+  <small>Installers are unsigned: on macOS right-click → Open the first time; on Windows choose "More info → Run anyway". · <a href="https://github.com/jd4rider/rumble-rally" style="color:inherit">Source</a></small>
+</main>
+</body>
+</html>
