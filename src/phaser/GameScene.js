@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import { openTipJar } from './support.js'
 import Matter from 'matter-js'
 import { W, H, button, text, fade } from './common.js'
 import { ring, flashAt, popText, grains } from './fx.js'
@@ -312,6 +313,8 @@ export default class GameScene extends Phaser.Scene {
     const menu = button(this, win ? 0 : 120, y, '☰ Levels', () => fade(this, 'levels', { page: Math.floor((this.n - 1) / 10) }), { w: 170, h: 60, size: 24, color: 0x475569 })
     const next = win && this.n < TOTAL_LEVELS && button(this, 190, y, 'Next ▶', () => fade(this, 'game', { level: this.n + 1 }), { w: 170, h: 60, size: 24, color: 0xea580c })
     box.add([retry, menu, ...(next ? [next] : [])])
+    // Quiet support link: results panel only, under the actions inside the card.
+    box.add(button(this, 0, 168, '☕ Buy me a coffee', () => openTipJar(), { w: 230, h: 28, size: 14, color: 0x1e293b, textColor: '#fde68a' }))
     box.list.forEach((c) => c.setScrollFactor?.(0))
     box.setScale(0.7).setAlpha(0)
     this.tweens.add({ targets: box, scale: 1, alpha: 1, duration: 260, ease: 'Back.Out' })
